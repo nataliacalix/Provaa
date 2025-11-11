@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTROL Ξ STOCK</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CONTROL Ξ STOCK</h1>
+            <p>Sistema de Gestão de Produtos de Limpeza • 2025</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="cadastro">Cadastrar</button>
+            <button class="tab-btn" data-tab="lista">Produtos</button>
+            <button class="tab-btn" data-tab="movimento">Entrada/Saída</button>
+            <button class="tab-btn" data-tab="alertas">Alertas</button>
+        </div>
+
+        <div id="cadastro" class="tab-content active">
+            <h2>Novo Produto</h2>
+            <form id="formCadastro" class="grid">
+                <input type="text" placeholder="Nome" id="nome" required>
+                <input type="text" placeholder="Marca" id="marca" required>
+                <input type="text" placeholder="Composição Química" id="composicao">
+                <input type="text" placeholder="Fragrância" id="fragrancia">
+                <input type="text" placeholder="Volume (ex: 500ml)" id="volume" required>
+                <select id="embalagem" required>
+                    <option value="">Embalagem</option>
+                    <option>Plástica</option>
+                    <option>Spray</option>
+                    <option>Refil</option>
+                    <option>Galão</option>
+                </select>
+                <select id="aplicacao" required>
+                    <option value="">Aplicação</option>
+                    <option>Doméstica</option>
+                    <option>Industrial</option>
+                    <option>Hospitalar</option>
+                </select>
+                <input type="number" placeholder="Estoque Mínimo" id="estoqueMinimo" value="10" required>
+                <input type="number" placeholder="Estoque Inicial" id="estoqueAtual" value="0">
+                <button type="submit">CADASTRAR PRODUTO</button>
+            </form>
+        </div>
+
+        <div id="lista" class="tab-content">
+            <h2>Produtos Cadastrados</h2>
+            <div id="listaProdutos"></div>
+        </div>
+
+        <div id="movimento" class="tab-content">
+            <h2>Movimentação de Estoque</h2>
+            <div class="grid">
+                <select id="selectProduto"><option>Carregando...</option></select>
+                <input type="number" placeholder="Quantidade" id="qtd" min="1" required>
+                <select id="tipo">
+                    <option value="entrada">ENTRADA</option>
+                    <option value="saida">SAÍDA</option>
+                </select>
+                <input type="text" placeholder="Responsável" id="responsavel" required>
+                <button type="button" onclick="movimentar()">REGISTRAR MOVIMENTO</button>
+            </div>
+        </div>
+
+        <div id="alertas" class="tab-content">
+            <h2>Alertas - Estoque Baixo</h2>
+            <div id="listaAlertas">Carregando...</div>
+        </div>
+    </div>
+
+    <script defer src="script.js"></script>
+</body>
+</html>

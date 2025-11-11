@@ -1,0 +1,10 @@
+controle-estoque-limpeza/
+│
+├── server.js               ← Backend Node.js (API REST)
+├── package.json
+│
+└── public/
+    ├── index.html
+    ├── style.css
+    ├── script.js
+    └── favicon.ico (opcional)
